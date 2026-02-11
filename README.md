@@ -1,29 +1,33 @@
-# @claw-dev/starter
+# @raphaellcs/starter
 
 > OpenClaw 技能快速启动器 - 一键生成技能骨架，支持格式验证
+
+[![npm](https://img.shields.io/npm/v/@raphaellcs/starter)](https://www.npmjs.com/package/@raphaellcs/starter)
+[![downloads](https://img.shields.io/npm/dm/@raphaellcs/starter)](https://www.npmjs.com/package/@raphaellcs/starter)
+[![license](https://img.shields.io/npm/l/@raphaellcs/starter)](https://www.npmjs.com/package/@raphaellcs/starter)
 
 ## 🚀 快速开始
 
 ### 交互式创建
 
 ```bash
-npx @claw-dev/starter
+npx @raphaellcs/starter
 ```
 
 ### 命令行创建
 
 ```bash
 # 基础模板
-npx @claw-dev/starter create my-skill
+npx @raphaellcs/starter create my-skill
 
 # NPM 模块模板
-npx @claw-dev/starter create my-skill -t npm
+npx @raphaellcs/starter create my-skill -t npm
 
 # TypeScript 模板
-npx @claw-dev/starter create my-skill -t typescript
+npx @raphaellcs/starter create my-skill -t typescript
 
 # 完整选项
-npx @claw-dev/starter create my-skill \
+npx @raphaellcs/starter create my-skill \
   --template typescript \
   --description "一个很棒的技能" \
   --emoji "⚡" \
@@ -76,10 +80,10 @@ my-skill/
 
 ```bash
 # 验证当前目录
-npx @claw-dev/starter validate
+npx @raphaellcs/starter validate
 
 # 验证指定路径
-npx @claw-dev/starter validate /path/to/skill/SKILL.md
+npx @raphaellcs/starter validate /path/to/skill/SKILL.md
 ```
 
 **验证检查项：**

@@ -1,5 +1,5 @@
 {
-  "name": "@claw-dev/starter",
+  "name": "@raphaellcs/starter",
   "version": "1.0.0",
   "description": "OpenClaw 技能快速启动器 - 一键生成技能骨架",
   "main": "src/index.js",
