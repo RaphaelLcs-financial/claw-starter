@@ -1,0 +1,34 @@
+{
+  "name": "@claw-dev/starter",
+  "version": "1.0.0",
+  "description": "OpenClaw 技能快速启动器 - 一键生成技能骨架",
+  "main": "src/index.js",
+  "bin": {
+    "claw-starter": "./bin/cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "openclaw",
+    "claw",
+    "skill",
+    "generator",
+    "cli"
+  ],
+  "author": "梦心",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^12.1.0",
+    "inquirer": "^9.3.8",
+    "ora": "^6.3.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/claw-dev/starter.git"
+  }
+}

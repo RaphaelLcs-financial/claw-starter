@@ -1,0 +1,16 @@
+{
+  "name": "openclaw-skill-{{skillNameKebab}}",
+  "version": "1.0.0",
+  "description": "{{description}}",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "openclaw",
+    "skill"
+  ],
+  "author": "{{author}}",
+  "license": "MIT"
+}
