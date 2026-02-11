@@ -185,5 +185,56 @@ program
     console.log();
   });
 
+program
+  .command('validate [path]')
+  .description('验证技能 SKILL.md 是否符合格式要求')
+  .action(skillPath => {
+    const spinner = ora('正在验证 SKILL.md...').start();
+
+    if (!skillPath) {
+      skillPath = path.join(process.cwd(), 'SKILL.md');
+    }
+
+    try {
+      if (!fs.existsSync(skillPath)) {
+        spinner.fail('SKILL.md 文件不存在');
+        process.exit(1);
+      }
+
+      const content = fs.readFileSync(skillPath, 'utf-8');
+      const errors = [];
+
+      // 检查 1: 必需的 frontmatter 字段
+      const requiredFields = ['name', 'description'];
+      for (const field of requiredFields) {
+        if (!content.match(new RegExp(`^${field}:`, 'm'))) {
+          errors.push(`缺少必需字段: ${field}`);
+        }
+      }
+
+      // 检查 2: metadata 部分
+      if (!content.includes('## Metadata')) {
+        errors.push('缺少 ## Metadata 部分');
+      }
+
+      // 检查 3: 至少有一个 section（Implementation, Configuration, Examples 等）
+      const hasSection = content.match(/^##\s+[A-Z]/m);
+      if (!hasSection) {
+        errors.push('至少需要一个实现章节（如 ## Implementation）');
+      }
+
+      if (errors.length > 0) {
+        spinner.fail('验证失败：\n');
+        errors.forEach(err => console.log(chalk.red(`  ❌ ${err}`)));
+        process.exit(1);
+      }
+
+      spinner.succeed('验证通过！SKILL.md 格式正确');
+    } catch (error) {
+      spinner.fail('验证失败：' + error.message);
+      process.exit(1);
+    }
+  });
+
 // 解析参数
 program.parse();
